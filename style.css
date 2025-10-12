@@ -477,10 +477,11 @@ th {
   }
 
     #itemTable td:nth-child(2) {
-    max-width: 200px;          /* smaller width for mobile */
+    max-width: 250px;          /* smaller width for mobile */
   }
   
 }
+
 
 
 
