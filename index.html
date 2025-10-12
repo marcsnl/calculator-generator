@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  
+   <!-- Page Title -->
+  <title>Calculator Generator</title>
+
+  <!-- Initial tags -->
+  <meta charset="UTF-8" />
+  <meta name="description" content="Program that stores formulas and can load as calculator" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+  <!-- Page Icon |TO ADD HREF LINK | -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/marcsnl/assets/main/graphics/main-logo.png" /> 
+    
+  <!-- style.css link -->
+  <link rel="stylesheet" href="style.css" />
+    
+  <!-- Font Awsome local link -->
+  <!-- <link rel="stylesheet" href="all.css" /> -->
+
+  <!-- Font Awsome main link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/> 
+    
+</head>
+    <body>
+
+    <!-- Body Wrapper-->
+    <div class="wrapper">
+
+      <!-- Navigation Bar -->
+      <nav>
+        <div class="navigation-bar">
+
+          <!-- Logo and/or Title Area of Navigation Bar |TO ADD SRC AND HREF LINK | -->
+          <div class="title-page-area"><a id="titleLink" href="https://marcsnl.github.io/" target="_blank"><img src="https://raw.githubusercontent.com/marcsnl/assets/main/graphics/main-logo.png" class="page-logo" alt="page logo"/></a></div>
+
+          <!-- Appearance Area (Color Theme and DarkMode) of Navigation Bar -->
+          <div class="appearance-area">
+            <!-- Darkmode Button -->
+            <div class="dark-mode-btn" title="Dark Mode">
+              <!-- Data Color : Hex  0-White 1-text-color 2-primary-color 3-secondary-color 4-ui-bg -->
+              <i class="btn fas fa-moon" data-color="#fff #e4e6eb #272B2F #1D2124 #171A1D"></i>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content Section -->
+      <main class="page-content content">
+        
+        <!-- Main Menu -->
+        <div class="main-menu" id="mainMenu">
+          
+          <h2 class="page-content-title">Calculator Generator</h2>
+
+          <div class="program-header">
+            <h3>Instructions : </h3>
+            <p>Click "Add" button and provide the variable and equation to be saved.</p>
+            <button id="guideBtn" title="Guide on using valid inputs">Guide</button>
+            <button id="addBtn">Add</button>
+          </div>
+          
+          <div class="table-container">
+           <table id="itemTable">
+             <thead>
+               <tr>
+                 <th>Variable</th>
+                 <th>Equation</th>
+                 <th>Actions</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td colspan="4">Empty</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+        
+          <div class="button-container">
+          <button id="resetBtn" title="Clear all saved data">Reset</button>
+          </div>
+        </div>
+      
+        <!-- Guide Menu -->
+        <div class="guide-menu hidden" id="guideMenu">
+          <h2 class="page-content-title">Guide</h2>
+          <div class="guide-menu-body">
+            <h3>Introduction</h3>
+            <p>This is a calculator generator.</p>
+            <p>It records variable and equation of a formula.</p>
+            <p>Recorded formulas can be loaded and be used as calculators.</p>
+            <h3>Variable</h3>
+            <p>Variable represents the value you want to find</p>
+            <p>It can be defined as a letter or a word</p>
+            <p>Limited to lowercase letters up to 7 characters</p>
+            <h3>Equation</h3>
+            <p>Equation defines how the variable is calculated.</p>
+            <p>This program follows the PEMDAS order of operations : </p>
+            <p>Parentheses</p>
+            <p>Exponent</p>
+            <p>Multiplication</p>
+            <p>Division</p>
+            <p>Addition</p>
+            <p>Subtraction</p>
+            <h3>Writing Valid Equation</h3>
+            <p>Letters written together without an operator are treated as a single variable name.</p>
+            <p>Always include an operator between numbers and variables — write <code>2*x</code> instead of <code>2x</code>.</p>
+            <p>Examples of Valid Variable and Equation :</p>
+            <p>force = mass*acceleration</p>
+            <p>ke = 0.5*m*v^2
+            <p>dc = fe/(1-vd*fe)</p>
+            <h3>Other things to consider : </h3>
+            <p>This program supports only basic arithmetic operations; functions such as <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>log</code>, and others are not supported.</p>
+            <p>Keep in mind what measurement units are used in certain equations. Different formulas may use different type of units.</p>
+            <p>This is opensource, you can add your stuff if you want the program to handle more complex equations.</p>
+          </div>
+
+          <button id="guideBackBtn">Back</button>
+        </div>
+
+      <!-- Calculator Menu -->
+      <div class="calculator-menu hidden box" id="calcMenu">
+        <h2 class="page-content-title" id="calcHeader">Let's Calculate!</h2>
+
+        <div class="loaded-calculator-program">
+
+          <p id="calcFormula" class="formula-display"></p>
+
+          <div id="calcInputs" class="calc-inputs"></div>
+
+          <div class="result-section">
+            <label for="calcResult">Result:</label>
+            <input type="text" id="calcResult" readonly>
+          </div>
+
+          <div class="calc-buttons">
+            <button id="calcComputeBtn">Compute</button>
+            <button id="calcResetBtn">Reset</button>
+            <button id="calculatorBackBtn">Back</button>
+          </div>
+        </div>
+      </div>
+
+      </main>
+
+      <footer class="footer">
+        <p>Email : marcsnl@proton.me</p>
+      </footer>
+    
+    </div>
+      
+    <!-- Reset Confirmation Modal -->
+    <div id="modalA" class="reset-modal">
+      <div class="reset-modal-content">
+        <div class="reset-modal-header">Reset Data</div>
+        <div class="reset-modal-body">
+          You're about to delete all local data, saved within this program.
+        </div>
+        <div class="reset-modal-actions">
+          <button id="resetConfirmBtn">Confirm</button>
+          <button id="resetCancelBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Modal -->
+    <div id="modalB" class="add-modal">
+      <div class="add-modal-content">
+        
+        <div class="add-modal-header">Add Item</div>
+        
+        <div class="add-modal-body">
+          <label for="variableInput">Variable:</label>
+          <input  type="text" 
+                  id="variableInput" 
+                  pattern="[a-z]{1,7}" 
+                  maxlength="7" 
+                  title="Only lowercase letters (a–z), up to 7 characters" 
+                  oninput="this.value = this.value.replace(/[^a-z]/g, '').slice(0, 7)">
+          <label for="equationInput">Equation:</label>
+          <input id="equationInput">
+        </div>
+        
+        <div class="add-modal-actions">
+          <button id="addConfirmBtn">Confirm</button>
+          <button id="addCancelBtn">Cancel</button>
+        </div>
+        
+      </div>
+    </div>
+      
+      <!-- Delete Confirmation Modal -->
+      <div id="modalC" class="delete-modal">
+        <div class="delete-modal-content">
+          <div class="delete-modal-header"
+               ><h3>Confirm Deletion</h3>
+          </div>
+            <div class="delete-modal-body">
+          <p>You are about to delete an equation.</p>
+          </div>
+          <div class="delete-modal-actions">
+            <button id="deleteConfirmBtn">Delete</button>
+            <button id="deleteCancelBtn">Cancel</button>
+          </div>
+        </div>
+      </div>  
+    
+
+  </body>
+
+  <!-- scripts -->
+  <script  src="./script.js"></script>
+
+
+</html>
