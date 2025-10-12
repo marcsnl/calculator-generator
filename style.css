@@ -202,6 +202,15 @@ th {
   margin: 4px;
 }
 
+#itemTable td:nth-child(2) {
+  max-width: 300px;            /* set your desired width limit */
+  white-space: normal;         /* allow line breaks */
+  word-wrap: break-word;       /* break long words if needed */
+  word-break: break-word;      /* ensure it wraps anywhere if too long */
+  text-align: left;            /* optional: make text easier to read */
+}
+
+
 /* -------- Page Content Style -------- */
 .content {
   flex: 1;
@@ -454,13 +463,25 @@ th {
 /* ------- Mobile Device ------- */
 @media (max-width: 768px) {
 
+    table {
+    font-size: 14px;
+  }
+  th, td {
+    padding: 8px 10px;
+  }
+
   .appearance-area {
     display: flex;
     align-items: center;
     gap: 10px;
   }
+
+    #itemTable td:nth-child(2) {
+    max-width: 200px;          /* smaller width for mobile */
+  }
   
 }
+
 
 
 
