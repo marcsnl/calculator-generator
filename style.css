@@ -272,6 +272,10 @@ th {
   text-align: center;
 }
 
+.program-header p{
+  text-align: center
+}
+
 /* -------- Guide Menu Styles -------- */
 .guide-menu{
   display: flex;
@@ -457,5 +461,6 @@ th {
   }
   
 }
+
 
 
