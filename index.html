@@ -97,7 +97,7 @@
             <h3>Variable</h3>
             <p>Variable represents the value you want to find</p>
             <p>It can be defined as a letter or a word</p>
-            <p>Limited to lowercase letters up to 7 characters</p>
+            <p>Limited to letters up to 8 characters</p>
             <h3>Equation</h3>
             <p>Equation defines how the variable is calculated.</p>
             <p>This program follows the PEMDAS order of operations : </p>
@@ -178,10 +178,10 @@
           <label for="variableInput">Variable:</label>
           <input  type="text" 
                   id="variableInput" 
-                  pattern="[a-z]{1,7}" 
-                  maxlength="7" 
-                  title="Only lowercase letters (a–z), up to 7 characters" 
-                  oninput="this.value = this.value.replace(/[^a-z]/g, '').slice(0, 7)">
+                  pattern="[A-Za-z]{1,8}" 
+                  maxlength="8" 
+                  title="Only letters (A–Z, a–z), up to 8 characters" 
+                  oninput="this.value = this.value.replace(/[^A-Za-z]/g, '').slice(0, 8)">
           <label for="equationInput">Equation:</label>
           <input id="equationInput">
         </div>
@@ -218,6 +218,7 @@
 
 
 </html>
+
 
 
 
