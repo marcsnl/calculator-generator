@@ -269,6 +269,7 @@ th {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 /* -------- Guide Menu Styles -------- */
@@ -456,4 +457,5 @@ th {
   }
   
 }
+
 
