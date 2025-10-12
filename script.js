@@ -233,6 +233,12 @@ setupModal({
       return false;
     }
 
+    // Missing operator near parentheses
+    if (/[0-9a-zA-Z]\(|\)\(/.test(equation)) {
+      alert("Missing operator near parentheses detected. Use * between adjacent values or parentheses. Example: 2*x*(y+3) or (x+1)*(y+2)");
+      return false;
+    }
+
     if (/[+\-*/^.]$/.test(equation)) {
       alert("Equation cannot end with an operator.");
       return false;
